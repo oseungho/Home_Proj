@@ -50,8 +50,8 @@
   <div class="main-page">
     <Top class="top-container"/>
     <v-row no-gutters>
-      <v-col cols="2">
-        <v-container class="main-Area" style="border-right: 1px solid gray;">
+      <v-col cols="2" class="main-Area" style="border-right:3px solid gray">
+        <v-container>
           <aside>
             <div @click="showContent('Main')">
               <h3>sidebar</h3>
@@ -76,8 +76,8 @@
           </aside>
         </v-container>
       </v-col>
-      <v-col cols="10">      
-        <v-container class="main-Area">
+      <v-col cols="10" class="main-Area">      
+        <v-container>
           <component :is="selectedComponent" /> <!-- 선택된 메뉴에 대한 컴포넌트 표시 -->        
         </v-container>
       </v-col>

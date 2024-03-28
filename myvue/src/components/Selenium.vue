@@ -17,9 +17,26 @@
         <p> 1. 라이브러리 설치 : pip install selenium</p>
         <p> 2. 브라우저 제어 : 
             <pre>
-                <code> 
-                    pip install selenium
-                    pip install selenium
+                <code style="white-space: pre-wrap;"> 
+                    # WebDriver객체 생성
+                    driver_path = f'{os.path.join(os.path.dirname(__file__), "chromedriver.exe")}'
+
+                    # 웹드라이버를 위한 Service객체 생성
+                    service = Service(executable_path=driver_path)
+                    options = webdriver.ChromeOptions()
+
+                    # headless 모드 설정
+                    options.add_argument("--headless")  
+
+                    # 사용자 에이전트 설정
+                    options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36")  
+                    
+                    # 자동종료 막기
+                    options.add_experimental_option("detach", True)
+                    driver = webdriver.Chrome(service=service, options=options)
+
+                    # 브라우저에 페이지 로딩하기
+                    driver.get('크롤링을 진행할 URL')
                 </code>
             </pre>
         </p>        
@@ -44,7 +61,6 @@
 }
 
 pre{
-    /* width: 50%; */
     background-color: rgb(220, 216, 211);
     border-radius: 30px;
 }
