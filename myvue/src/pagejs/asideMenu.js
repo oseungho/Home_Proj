@@ -25,6 +25,9 @@ export default [
 //     meta: { counter: selfRouteCounter++ },
 //   },  
     {
+     title:'Vue',
+    },
+    {
      title:'Python',
      children:[
         {title: 'Selenium'},
